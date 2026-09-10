@@ -18,7 +18,7 @@
     <div class="ambient ambient-two"></div>
 
     <header class="topbar">
-      <a class="brand" href="index.html" aria-label="Etler Hub home">
+      <a class="brand" href="index.html" data-i18n-attr="aria-label:brand.home">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 32 32" fill="none">
             <path d="M16 3.5 27 9.7v12.6L16 28.5 5 22.3V9.7L16 3.5Z" stroke="currentColor" stroke-width="2"/>
@@ -27,13 +27,14 @@
         </span>
         <span>Etler <b>Hub</b></span>
       </a>
-      <nav class="home-nav" aria-label="Main navigation">
-        <a class="is-active" href="index.html">Home</a>
-        <a href="free.html">Free Script</a>
-        <a href="config.html">Config Builder</a>
+      <nav class="home-nav" data-i18n-attr="aria-label:nav.main">
+        <a class="is-active" href="index.html" data-i18n="nav.home">Home</a>
+        <a href="free.html" data-i18n="nav.free">Free Script</a>
+        <a href="config.html" data-i18n="nav.config">Config Builder</a>
       </nav>
       <div class="topbar-right">
-        <span class="status-dot"><i></i> ONLINE</span>
+        <span class="status-dot"><i></i> <span data-i18n="status.online">ONLINE</span></span>
+        <button class="language-toggle" id="language-toggle" type="button"><span id="language-label">中文</span></button>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
           <span class="theme-glyph" id="theme-glyph" aria-hidden="true">☾</span><span id="theme-label">Light</span>
         </button>
@@ -43,66 +44,67 @@
     <main id="top" class="home-shell">
       <section class="home-hero">
         <div class="home-hero-copy">
-          <p class="eyebrow"><span></span> ETler hub / START HERE</p>
-          <h1>Etler Hub<br /><em>- A Universal Time Script</em></h1>
-          <p class="home-lede">A clean home for your loadouts, tools, and the next generation of Etler utilities.</p>
+          <p class="eyebrow"><span></span> <span data-i18n="home.eyebrow">ETler hub / START HERE</span></p>
+          <h1><span data-i18n="home.title">Etler Hub</span><br /><em data-i18n="home.titleAccent">- A Universal Time Script</em></h1>
+          <p class="home-lede" data-i18n="home.lede">A clean home for your loadouts, tools, and the next generation of Etler utilities.</p>
           <div class="home-actions">
-            <a class="secondary-action" href="#tools">Explore the hub <span>↓</span></a>
+            <a class="secondary-action" href="#tools"><span data-i18n="home.explore">Explore the hub</span> <span>↓</span></a>
           </div>
         </div>
         <div class="home-orbit" aria-hidden="true">
           <div class="orbit-ring orbit-ring-one"></div>
           <div class="orbit-ring orbit-ring-two"></div>
           <div class="orbit-core"><span>Etler Hub</span><i></i></div>
-          <span class="orbit-label orbit-label-one">LOADOUTS</span>
-          <span class="orbit-label orbit-label-two">TOOLS</span>
-          <span class="orbit-label orbit-label-three">ETLER</span>
+          <span class="orbit-label orbit-label-one" data-i18n="home.orbit.loadouts">LOADOUTS</span>
+          <span class="orbit-label orbit-label-two" data-i18n="home.orbit.tools">TOOLS</span>
+          <span class="orbit-label orbit-label-three" data-i18n="home.orbit.etler">ETLER</span>
         </div>
       </section>
 
       <section id="tools" class="hub-section" aria-labelledby="tools-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow"><span></span> ETLER HUB</p>
-            <h2 id="tools-title">Etler Hub modules.</h2>
+            <p class="eyebrow"><span></span> <span data-i18n="home.sectionEyebrow">ETLER HUB</span></p>
+            <h2 id="tools-title" data-i18n="home.sectionTitle">Etler Hub modules.</h2>
           </div>
           <span class="section-index">01 / 01</span>
         </div>
         <div class="module-grid">
           <a class="module-card module-card-featured free-module-card" href="free.html">
-            <div class="module-card-top"><span class="module-number">01</span><span class="module-status">READY</span></div>
+            <div class="module-card-top"><span class="module-number">01</span><span class="module-status" data-i18n="home.module.freeStatus">READY</span></div>
             <div class="module-icon">⌁</div>
-            <h3>Free Script</h3>
-            <p>Copy the free loadstring and get your key from the Etler Hub Discord server.</p>
-            <span class="module-link">Open free script <b>↗</b></span>
+            <h3 data-i18n="home.module.freeTitle">Free Script</h3>
+            <p data-i18n="home.module.freeCopy">Copy the free loadstring and get your key from the Etler Hub Discord server.</p>
+            <span class="module-link"><span data-i18n="home.module.freeLink">Open free script</span> <b>↗</b></span>
           </a>
           <a class="module-card module-card-featured kaitun-module-card" href="config.html">
-            <div class="module-card-top"><span class="module-number">02</span><span class="module-status">CONFIG</span></div>
+            <div class="module-card-top"><span class="module-number">02</span><span class="module-status" data-i18n="home.module.configStatus">CONFIG</span></div>
             <div class="module-icon">⌘</div>
-            <h3>Kaitun Config</h3>
-            <p>Configure and run it in your executor. A paid script is required.</p>
-            <span class="module-link">Open Kaitun config <b>↗</b></span>
+            <h3 data-i18n="home.module.configTitle">Kaitun Config</h3>
+            <p data-i18n="home.module.configCopy">Configure and run it in your executor. A paid script is required.</p>
+            <span class="module-link"><span data-i18n="home.module.configLink">Open Kaitun config</span> <b>↗</b></span>
           </a>
           <a class="module-card module-card-featured discord-module-card" href="https://discord.gg/sDwYt2YUWt" target="_blank" rel="noopener noreferrer">
-            <div class="module-card-top"><span class="module-number">03</span><span class="module-status">COMMUNITY</span></div>
+            <div class="module-card-top"><span class="module-number">03</span><span class="module-status" data-i18n="home.module.communityStatus">COMMUNITY</span></div>
             <div class="module-icon discord-module-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M19.5 5.2A16.2 16.2 0 0 0 15.7 4l-.5 1a14.8 14.8 0 0 0-2.4-.2c-.8 0-1.6.1-2.4.2l-.5-1c-1.3.3-2.6.7-3.8 1.2C3.7 8.9 3 12.5 3.3 16c1.5 1.1 3 1.8 4.6 2.2l1.1-1.4c-.6-.2-1.2-.5-1.7-.8l.4-.3c1.3.6 2.8 1 4.3 1s3-.4 4.3-1l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.4c1.6-.4 3.1-1.1 4.6-2.2.4-4.1-.7-7.7-1.2-10.8ZM9.6 14.1c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.7 1.6 1.7-.7 1.7-1.6 1.7Zm4.8 0c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.7 1.6 1.7-.7 1.7-1.6 1.7Z" fill="currentColor"/></svg>
             </div>
             <h3>Etler Hub Discord</h3>
-            <p>Get your key, meet the community, and keep up with Etler Hub.</p>
-            <span class="discord-module-stats"><i></i><b id="home-discord-online">—</b> online <em>•</em> <b id="home-discord-members">—</b> members</span>
-            <span class="module-link">Join server <b>↗</b></span>
+            <p data-i18n="home.module.communityCopy">Get your key, meet the community, and keep up with Etler Hub.</p>
+            <span class="discord-module-stats"><i></i><b id="home-discord-online">—</b> <span data-i18n="home.module.online">online</span> <em>•</em> <b id="home-discord-members">—</b> <span data-i18n="home.module.members">members</span></span>
+            <span class="module-link"><span data-i18n="home.module.join">Join server</span> <b>↗</b></span>
           </a>
         </div>
       </section>
 
       <section class="home-rail" aria-label="Etler Hub status">
-        <span><i></i> SYSTEM ONLINE</span>
-        <span>ETLER HUB <b>•</b> FOUNDATION BUILD</span>
-        <a href="free.html">Open free script <b>→</b></a>
+        <span><i></i> <span data-i18n="home.rail.status">SYSTEM ONLINE</span></span>
+        <span data-i18n="home.rail.build">ETLER HUB • FOUNDATION BUILD</span>
+        <a href="free.html"><span data-i18n="home.module.freeLink">Open free script</span> <b>→</b></a>
       </section>
     </main>
 
+    <script src="language.js"></script>
     <script type="module" src="home.js"></script>
   </body>
 </html>

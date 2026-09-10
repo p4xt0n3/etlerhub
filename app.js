@@ -7,6 +7,7 @@ const STORAGE_KEY = 'etler-hub-settings';
 const THEME_KEY = 'etler-hub-theme';
 const LOADER_FILE = '7fe22b5d56dfddd7a0c6f175b35f57c0.lua';
 const DISCORD_INVITE_URL = 'https://discord.com/api/v10/invites/sDwYt2YUWt?with_counts=true';
+const t = (key, variables) => window.i18n?.t(key, variables) ?? key;
 const TRAIT_GROUPS = [
   {
     className: 'tier-one',
@@ -28,10 +29,10 @@ function applyTheme(theme) {
   const nextTheme = theme === 'light' ? 'light' : 'dark';
   document.documentElement.dataset.theme = nextTheme;
   const isLight = nextTheme === 'light';
-  $('theme-label').textContent = isLight ? 'Dark' : 'Light';
+  $('theme-label').textContent = t(isLight ? 'theme.dark' : 'theme.light');
   $('theme-glyph').textContent = isLight ? '☀' : '☾';
-  $('theme-toggle').setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
-  $('theme-toggle').setAttribute('title', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+  $('theme-toggle').setAttribute('aria-label', t(isLight ? 'theme.switchToDark' : 'theme.switchToLight'));
+  $('theme-toggle').setAttribute('title', t(isLight ? 'theme.switchToDark' : 'theme.switchToLight'));
   document.querySelector('meta[name="theme-color"]').setAttribute('content', isLight ? '#f4f7fb' : '#080d16');
 }
 
@@ -79,11 +80,11 @@ function traitPickerMarkup(selected, index) {
       <span>${trait}</span>
     </label>
   `).join('')).join('');
-  const summary = selected.size ? [...selected].slice(0, 2).join(', ') + (selected.size > 2 ? ` +${selected.size - 2}` : '') : 'Select traits';
+  const summary = selected.size ? [...selected].slice(0, 2).join(', ') + (selected.size > 2 ? ` +${selected.size - 2}` : '') : t('trait.select');
   return `<div class="trait-picker" data-field="traits" data-picker-index="${index}">
     <button class="trait-trigger" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="trait-summary ${selected.size ? '' : 'placeholder'}">${summary}</span><span class="trait-chevron">⌄</span></button>
-    <div class="trait-menu" role="listbox" aria-label="Trait choices">
-      <div class="trait-menu-heading">SELECT TRAITS</div>
+    <div class="trait-menu" role="listbox" aria-label="${t('trait.choices')}" data-i18n-attr="aria-label:trait.choices">
+      <div class="trait-menu-heading">${t('trait.heading')}</div>
       <div class="trait-options">${options}</div>
     </div>
   </div>`;
@@ -94,9 +95,9 @@ function renderGroups() {
   container.innerHTML = state.groups.map((group, index) => `
     <div class="priority-row" data-index="${index}">
       <span class="group-index">${String(index + 1).padStart(2, '0')}</span>
-      <input data-field="stands" type="text" value="${escapeAttribute(group.stands)}" placeholder="Standless, The Vessel" aria-label="Stands in group ${index + 1}" />
+      <input data-field="stands" type="text" value="${escapeAttribute(group.stands)}" placeholder="${t('trait.standsPlaceholder')}" aria-label="${t('trait.standsPlaceholder')} ${index + 1}" />
       ${traitPickerMarkup(traitValues(group.traits), index)}
-      <button class="remove-group" type="button" aria-label="Remove group ${index + 1}">×</button>
+      <button class="remove-group" type="button" aria-label="${t('trait.remove', { n: index + 1 })}">×</button>
     </div>
   `).join('');
 
@@ -118,7 +119,7 @@ function renderGroups() {
     picker.querySelectorAll('[data-trait]').forEach((input) => input.addEventListener('change', () => {
       const selected = [...picker.querySelectorAll('[data-trait]:checked')].map((item) => item.value);
       const summary = picker.querySelector('.trait-summary');
-      summary.textContent = selected.length ? selected.slice(0, 2).join(', ') + (selected.length > 2 ? ` +${selected.length - 2}` : '') : 'Select traits';
+      summary.textContent = selected.length ? selected.slice(0, 2).join(', ') + (selected.length > 2 ? ` +${selected.length - 2}` : '') : t('trait.select');
       summary.classList.toggle('placeholder', !selected.length);
       updateConfig();
     }));
@@ -188,7 +189,7 @@ script_key = ${luaString(key)};loadstring(game:HttpGet("https://api.luarmor.net/
 function updateConfig() {
   state.groups = currentGroups();
   $('code-output').textContent = makeLua();
-  $('config-state').textContent = $('script-key').value ? 'READY' : 'UNSAVED';
+  $('config-state').textContent = t($('script-key').value ? 'config.ready' : 'config.unsaved');
   persistSettings();
 }
 
@@ -231,14 +232,14 @@ function flash(message) {
 async function copyConfig() {
   try {
     await navigator.clipboard.writeText(makeLua());
-    flash('Config copied to clipboard');
+    flash(t('toast.configCopied'));
   } catch {
     const range = document.createRange();
     range.selectNodeContents($('code-output'));
     const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
-    flash('Select and copy the config');
+    flash(t('toast.selectConfig'));
   }
 }
 
@@ -250,7 +251,7 @@ function downloadConfig() {
   link.download = 'etler-config.lua';
   link.click();
   URL.revokeObjectURL(url);
-  flash('Downloaded etler-config.lua');
+  flash(t('toast.downloaded'));
 }
 
 function syncSkinOptions() {
@@ -323,8 +324,8 @@ function bindInputs() {
     const input = $('script-key');
     const visible = input.type === 'text';
     input.type = visible ? 'password' : 'text';
-    $('toggle-key').textContent = visible ? 'Show' : 'Hide';
-    $('toggle-key').setAttribute('aria-label', visible ? 'Show script key' : 'Hide script key');
+    $('toggle-key').textContent = t(visible ? 'config.showKey' : 'config.hideKey');
+    $('toggle-key').setAttribute('aria-label', t(visible ? 'config.showKey' : 'config.hideKey'));
   });
   document.addEventListener('click', () => {
     document.querySelectorAll('.trait-picker.open').forEach((picker) => {
@@ -349,6 +350,11 @@ function bindInputs() {
 }
 
 bindTheme();
+window.addEventListener('languagechange', () => {
+  applyTheme(document.documentElement.dataset.theme);
+  renderGroups();
+  updateConfig();
+});
 restoreSettings();
 renderGroups();
 bindInputs();

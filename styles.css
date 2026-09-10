@@ -89,8 +89,10 @@ button { cursor: pointer; }
 .topbar-right { display: flex; align-items: center; gap: 22px; }
 .back-home-button { color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; font: 10px var(--mono); text-decoration: none; transition: .2s; }
 .back-home-button:hover { border-color: var(--accent); color: var(--accent); }
-.theme-toggle { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 999px; padding: 6px 9px; color: var(--muted); background: var(--panel); font: 10px var(--mono); transition: .2s; }
+.theme-toggle, .language-toggle { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 999px; padding: 6px 9px; color: var(--muted); background: var(--panel); font: 10px var(--mono); transition: .2s; }
 .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.language-toggle { color: var(--accent); }
+.language-toggle:hover { border-color: var(--accent); background: var(--accent-wash); }
 .theme-glyph { color: var(--accent); font-size: 13px; line-height: 1; }
 .status-dot, .docs-link { font-size: 10px; font-family: var(--mono); letter-spacing: .1em; color: var(--muted); }
 .status-dot { display: flex; align-items: center; gap: 7px; }
@@ -110,6 +112,7 @@ button { cursor: pointer; }
 .hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 35px; padding: 0 8px 49px; }
 .eyebrow { font: 500 10px var(--mono); letter-spacing: .15em; color: var(--accent); margin: 0 0 20px; display: flex; align-items: center; gap: 10px; }
 .eyebrow span { display: block; width: 20px; height: 1px; background: var(--accent); }
+.eyebrow > span[data-i18n] { display: inline; width: auto; height: auto; background: none; }
 h1 { font-size: clamp(38px, 5vw, 63px); line-height: .99; margin: 0; letter-spacing: -.065em; font-weight: 600; }
 h1 em { color: var(--accent); font-style: normal; }
 .hero-copy { color: var(--muted); max-width: 420px; font-size: 14px; line-height: 1.65; margin: 20px 0 0; }

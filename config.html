@@ -18,7 +18,7 @@
     <div class="ambient ambient-two"></div>
 
     <header class="topbar">
-      <a class="brand" href="index.html" aria-label="Etler Hub home">
+      <a class="brand" href="index.html" data-i18n-attr="aria-label:brand.home">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 32 32" fill="none">
             <path d="M16 3.5 27 9.7v12.6L16 28.5 5 22.3V9.7L16 3.5Z" stroke="currentColor" stroke-width="2"/>
@@ -28,135 +28,136 @@
         <span>Etler <b>Hub</b></span>
       </a>
       <div class="topbar-right">
-        <a class="back-home-button" href="index.html">← Back to Hub</a>
-        <span class="status-dot"><i></i> CONFIG BUILDER</span>
+        <a class="back-home-button" href="index.html" data-i18n="back.hub">← Back to Hub</a>
+        <span class="status-dot"><i></i> <span data-i18n="status.config">CONFIG BUILDER</span></span>
+        <button class="language-toggle" id="language-toggle" type="button"><span id="language-label">中文</span></button>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
           <span class="theme-glyph" id="theme-glyph" aria-hidden="true">☾</span><span id="theme-label">Light</span>
         </button>
-        <button class="docs-link docs-button" id="quick-guide-trigger" type="button" aria-haspopup="dialog" aria-controls="guide-modal">Quick guide <span>↗</span></button>
+        <button class="docs-link docs-button" id="quick-guide-trigger" type="button" aria-haspopup="dialog" aria-controls="guide-modal"><span data-i18n="guide.quick">Quick guide</span> <span>↗</span></button>
       </div>
     </header>
 
     <main id="top" class="shell">
-      <p class="paid-warning" role="alert">BEFORE USING KAITUN CONFIG, MAKE SURE YOU HAVE BOUGHT A PAID SCRIPT, OR ELSE YOU WON'T BE ABLE TO USE IT</p>
-      <p class="paid-warning paid-warning-secondary" role="alert">YOU CAN BUY THE PAID SCRIPT IN ETLER HUB'S DISCORD SERVER</p>
-      <a class="discord-card config-discord-card" href="https://discord.gg/sDwYt2YUWt" target="_blank" rel="noopener noreferrer" aria-label="Join the Etler Hub Discord server">
+      <p class="paid-warning" role="alert" data-i18n="config.warningOne">BEFORE USING KAITUN CONFIG, MAKE SURE YOU HAVE BOUGHT A PAID SCRIPT, OR ELSE YOU WON'T BE ABLE TO USE IT</p>
+      <p class="paid-warning paid-warning-secondary" role="alert" data-i18n="config.warningTwo">YOU CAN BUY THE PAID SCRIPT IN ETLER HUB'S DISCORD SERVER</p>
+      <a class="discord-card config-discord-card" href="https://discord.gg/sDwYt2YUWt" target="_blank" rel="noopener noreferrer" data-i18n-attr="aria-label:discord.joinAria">
         <span class="discord-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none"><path d="M19.5 5.2A16.2 16.2 0 0 0 15.7 4l-.5 1a14.8 14.8 0 0 0-2.4-.2c-.8 0-1.6.1-2.4.2l-.5-1c-1.3.3-2.6.7-3.8 1.2C3.7 8.9 3 12.5 3.3 16c1.5 1.1 3 1.8 4.6 2.2l1.1-1.4c-.6-.2-1.2-.5-1.7-.8l.4-.3c1.3.6 2.8 1 4.3 1s3-.4 4.3-1l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.4c1.6-.4 3.1-1.1 4.6-2.2.4-4.1-.7-7.7-1.2-10.8ZM9.6 14.1c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.7 1.6 1.7-.7 1.7-1.6 1.7Zm4.8 0c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.7 1.6 1.7 1.6 1.7-1.6 1.7Z" fill="currentColor"/></svg>
         </span>
-        <span class="discord-copy"><strong id="discord-name">Etler Hub</strong><span><i class="discord-online-dot"></i><b id="discord-online">—</b> online <em>•</em> <b id="discord-members">—</b> members</span></span>
-        <span class="discord-join">Join <span>↗</span></span>
+        <span class="discord-copy"><strong id="discord-name">Etler Hub</strong><span><i class="discord-online-dot"></i><b id="discord-online">—</b> <span data-i18n="discord.online">online</span> <em>•</em> <b id="discord-members">—</b> <span data-i18n="discord.members">members</span></span></span>
+        <span class="discord-join"><span data-i18n="discord.join">Join</span> <span>↗</span></span>
       </a>
       <section class="hero">
         <div>
-          <p class="eyebrow"><span></span> BOUNDLESS TOWER LOADOUT</p>
-          <h1>Build your farm.<br /><em>Leave the rest to Etler.</em></h1>
-          <p class="hero-copy">Tune your traits, paste your key, and generate a ready-to-run config in seconds.</p>
+          <p class="eyebrow"><span></span> <span data-i18n="config.eyebrow">BOUNDLESS TOWER LOADOUT</span></p>
+          <h1><span data-i18n="config.title">Build your farm.</span><br /><em data-i18n="config.titleAccent">Leave the rest to Etler.</em></h1>
+          <p class="hero-copy" data-i18n="config.copy">Tune your traits, paste your key, and generate a ready-to-run config in seconds.</p>
         </div>
         <div class="hero-badge">
           <div class="badge-icon">⌁</div>
-          <div><strong>Overnight ready</strong><span>Auto-saves your choices locally</span></div>
+          <div><strong data-i18n="config.badgeTitle">Overnight ready</strong><span data-i18n="config.badgeCopy">Auto-saves your choices locally</span></div>
         </div>
       </section>
 
       <div class="workspace-grid">
-        <section class="builder-column" aria-label="Configuration builder">
+        <section class="builder-column" data-i18n-attr="aria-label:config.builderAria">
           <div class="panel step-panel">
             <div class="panel-heading">
               <div class="step-number">01</div>
-              <div><h2>Connect your loader</h2><p>These two values are used only in the generated script.</p></div>
+              <div><h2 data-i18n="config.connectTitle">Connect your loader</h2><p data-i18n="config.connectCopy">These two values are used only in the generated script.</p></div>
             </div>
             <div class="field-grid">
               <label class="field">
-                <span>Script key <small>required</small></span>
+                <span><span data-i18n="config.scriptKey">Script key</span> <small data-i18n="required">required</small></span>
                 <div class="input-wrap">
-                  <input id="script-key" type="password" placeholder="Paste your script key" autocomplete="off" />
-                  <button class="input-action" type="button" id="toggle-key" aria-label="Show script key">Show</button>
+                  <input id="script-key" type="password" data-i18n-attr="placeholder:config.scriptKeyPlaceholder" placeholder="Paste your script key" autocomplete="off" />
+                  <button class="input-action" type="button" id="toggle-key" data-i18n-attr="aria-label:config.showKey" aria-label="Show script key" data-i18n="config.showKey">Show</button>
                 </div>
               </label>
               <label class="field">
-                <span>Loader file <small>required</small></span>
-                <div class="input-wrap loader-input locked-loader" aria-label="Fixed loader file"><b>…/loaders/</b><span id="loader">7fe22b5d56dfddd7a0c6f175b35f57c0.lua</span><i>LOCKED</i></div>
+                <span><span data-i18n="config.loaderFile">Loader file</span> <small data-i18n="required">required</small></span>
+                <div class="input-wrap loader-input locked-loader" data-i18n-attr="aria-label:config.fixedLoaderAria" aria-label="Fixed loader file"><b>…/loaders/</b><span id="loader">7fe22b5d56dfddd7a0c6f175b35f57c0.lua</span><i data-i18n="locked">LOCKED</i></div>
               </label>
             </div>
-            <div class="note-line"><span class="note-icon">i</span> Keep your config above the loadstring line. Never share your script key.</div>
+            <div class="note-line"><span class="note-icon">i</span> <span data-i18n="config.note">Keep your config above the loadstring line. Never share your script key.</span></div>
           </div>
 
           <div class="panel step-panel">
             <div class="panel-heading">
               <div class="step-number">02</div>
-              <div><h2>Choices</h2><p>Pick the traits to farm for each stand group. Groups run from top to bottom.</p></div>
+              <div><h2 data-i18n="config.choicesTitle">Choices</h2><p data-i18n="config.choicesCopy">Pick the traits to farm for each stand group. Groups run from top to bottom.</p></div>
             </div>
             <div id="priority-groups" class="priority-groups"></div>
-            <button class="add-group" id="add-group" type="button"><span>＋</span> Add priority group</button>
+            <button class="add-group" id="add-group" type="button"><span>＋</span> <span data-i18n="config.addGroup">Add priority group</span></button>
           </div>
 
           <div class="panel step-panel">
             <div class="panel-heading">
               <div class="step-number">03</div>
-              <div><h2>Set farm behavior</h2><p>Everything starts with safe, overnight-friendly defaults.</p></div>
+              <div><h2 data-i18n="config.behaviorTitle">Set farm behavior</h2><p data-i18n="config.behaviorCopy">Everything starts with safe, overnight-friendly defaults.</p></div>
             </div>
 
             <div class="setting-block">
-              <div class="setting-title"><span>Farm rules</span><small>CORE</small></div>
+              <div class="setting-title"><span data-i18n="config.farmRules">Farm rules</span><small data-i18n="core">CORE</small></div>
               <div class="compact-fields">
-                <label class="field"><span>Floor cap</span><div class="number-input"><input id="floor-cap" type="number" min="0" value="15" /><span>floors</span></div></label>
-                <label class="field"><span>Webhook <small>optional</small></span><input id="webhook" type="url" placeholder="https://discord.com/api/webhooks/…" /></label>
+                <label class="field"><span data-i18n="config.floorCap">Floor cap</span><div class="number-input"><input id="floor-cap" type="number" min="0" value="15" /><span data-i18n="floors">floors</span></div></label>
+                <label class="field"><span><span data-i18n="config.webhook">Webhook</span> <small data-i18n="optional">optional</small></span><input id="webhook" type="url" placeholder="https://discord.com/api/webhooks/…" /></label>
               </div>
-              <label class="field items-field"><span>Items to keep <small>optional · comma separated</small></span><input id="items-to-keep" type="text" placeholder="UCoins, Saint's Corpse" /></label>
+              <label class="field items-field"><span><span data-i18n="config.itemsKeep">Items to keep</span> <small data-i18n="config.commaSeparated">optional · comma separated</small></span><input id="items-to-keep" type="text" data-i18n-attr="placeholder:config.itemsPlaceholder" placeholder="UCoins, Saint's Corpse" /></label>
               <div class="toggle-grid">
-                <label class="toggle-row"><span><b>Auto chest</b><small>Open chests as you farm</small></span><input id="auto-chest" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Auto ascend</b><small>Spend UCoins to reset your level</small></span><input id="auto-ascend" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.autoChest">Auto chest</b><small data-i18n="config.autoChestCopy">Open chests as you farm</small></span><input id="auto-chest" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.autoAscend">Auto ascend</b><small data-i18n="config.autoAscendCopy">Spend UCoins to reset your level</small></span><input id="auto-ascend" type="checkbox" checked /><i></i></label>
               </div>
             </div>
 
             <div class="setting-block split-setting">
-              <div class="setting-title"><span>Optimization</span><small>PERFORMANCE</small></div>
+              <div class="setting-title"><span data-i18n="config.optimization">Optimization</span><small data-i18n="performance">PERFORMANCE</small></div>
               <div class="compact-fields three">
-                <label class="field"><span>FPS cap</span><div class="number-input"><input id="fps-cap" type="number" min="1" max="240" value="60" /><span>fps</span></div></label>
+                <label class="field"><span data-i18n="config.fpsCap">FPS cap</span><div class="number-input"><input id="fps-cap" type="number" min="1" max="240" value="60" /><span data-i18n="fps">fps</span></div></label>
               </div>
               <div class="toggle-grid three">
-                <label class="toggle-row"><span><b>Eco mode</b><small>Minimum graphics</small></span><input id="eco-mode" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Stop rendering</b><small>Lowest GPU usage</small></span><input id="stop-rendering" type="checkbox" /><i></i></label>
-                <label class="toggle-row"><span><b>Debug mode</b><small>Show extra logs</small></span><input id="debug-mode" type="checkbox" /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.ecoMode">Eco mode</b><small data-i18n="config.ecoModeCopy">Minimum graphics</small></span><input id="eco-mode" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.stopRendering">Stop rendering</b><small data-i18n="config.stopRenderingCopy">Lowest GPU usage</small></span><input id="stop-rendering" type="checkbox" /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.debugMode">Debug mode</b><small data-i18n="config.debugModeCopy">Show extra logs</small></span><input id="debug-mode" type="checkbox" /><i></i></label>
               </div>
             </div>
 
             <div class="setting-block split-setting">
-              <div class="setting-title"><span>Combat assist</span><small>OPTIONAL</small></div>
+              <div class="setting-title"><span data-i18n="config.combatAssist">Combat assist</span><small data-i18n="optional">OPTIONAL</small></div>
               <div class="toggle-grid three">
-                <label class="toggle-row"><span><b>Summon stand</b><small>Keep your stand active</small></span><input id="auto-summon" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Buso Haki</b><small>Keep Haki active</small></span><input id="auto-buso" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Auto skills</b><small>Cast abilities automatically</small></span><input id="auto-skills" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.summonStand">Summon stand</b><small data-i18n="config.summonStandCopy">Keep your stand active</small></span><input id="auto-summon" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.buso">Buso Haki</b><small data-i18n="config.busoCopy">Keep Haki active</small></span><input id="auto-buso" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.autoSkills">Auto skills</b><small data-i18n="config.autoSkillsCopy">Cast abilities automatically</small></span><input id="auto-skills" type="checkbox" checked /><i></i></label>
               </div>
-              <label class="field skill-keys"><span>Skill keys <small>leave blank to fire all</small></span><input id="skill-keys" type="text" placeholder="R, T, R+" /></label>
+              <label class="field skill-keys"><span><span data-i18n="config.skillKeys">Skill keys</span> <small data-i18n="config.skillKeysCopy">leave blank to fire all</small></span><input id="skill-keys" type="text" placeholder="R, T, R+" /></label>
             </div>
           </div>
 
           <div class="panel skin-panel">
             <div class="panel-heading compact-heading">
               <div class="step-number">+</div>
-              <div><h2>Skin settings</h2><p>Optional recycling and forging while you farm.</p></div>
+              <div><h2 data-i18n="config.skinTitle">Skin settings</h2><p data-i18n="config.skinCopy">Optional recycling and forging while you farm.</p></div>
               <label class="mini-toggle"><input id="skins-enabled" type="checkbox" checked /><i></i></label>
             </div>
             <div id="skin-options" class="skin-options">
               <div class="rarity-picker">
-                <span class="picker-label">Keep rarities</span>
+                <span class="picker-label" data-i18n="config.keepRarities">Keep rarities</span>
                 <div class="rarity-list">
-                  <label><input type="checkbox" value="Rare" />Rare</label>
-                  <label><input type="checkbox" value="Epic" />Epic</label>
-                  <label><input type="checkbox" value="Legendary" />Legendary</label>
-                  <label class="checked"><input type="checkbox" value="Event" checked />Event</label>
-                  <label><input type="checkbox" value="Mythic" />Mythic</label>
-                  <label><input type="checkbox" value="Universal" />Universal</label>
+                  <label><input type="checkbox" value="Rare" /><span data-i18n="rarity.rare">Rare</span></label>
+                  <label><input type="checkbox" value="Epic" /><span data-i18n="rarity.epic">Epic</span></label>
+                  <label><input type="checkbox" value="Legendary" /><span data-i18n="rarity.legendary">Legendary</span></label>
+                  <label class="checked"><input type="checkbox" value="Event" checked /><span data-i18n="rarity.event">Event</span></label>
+                  <label><input type="checkbox" value="Mythic" /><span data-i18n="rarity.mythic">Mythic</span></label>
+                  <label><input type="checkbox" value="Universal" /><span data-i18n="rarity.universal">Universal</span></label>
                 </div>
               </div>
               <div class="toggle-grid three skin-toggles">
-                <label class="toggle-row"><span><b>Recycle skins</b></span><input id="recycle" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Keep premium</b></span><input id="keep-premium" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Keep unusuals</b></span><input id="keep-unusuals" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Forge unusuals</b></span><input id="forge-unusuals" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Buy crates</b></span><input id="buy-crates" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.recycle">Recycle skins</b></span><input id="recycle" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.keepPremium">Keep premium</b></span><input id="keep-premium" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.keepUnusuals">Keep unusuals</b></span><input id="keep-unusuals" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.forgeUnusuals">Forge unusuals</b></span><input id="forge-unusuals" type="checkbox" checked /><i></i></label>
+                <label class="toggle-row"><span><b data-i18n="config.buyCrates">Buy crates</b></span><input id="buy-crates" type="checkbox" checked /><i></i></label>
               </div>
             </div>
           </div>
@@ -165,45 +166,45 @@
         <aside class="output-column">
           <div class="code-card">
             <div class="code-card-top">
-              <div><span class="live-dot"></span><span>GENERATED CONFIG</span></div>
-              <span id="config-state" class="config-state">UNSAVED</span>
+              <div><span class="live-dot"></span><span data-i18n="config.generated">GENERATED CONFIG</span></div>
+              <span id="config-state" class="config-state" data-i18n="config.unsaved">UNSAVED</span>
             </div>
-            <div class="code-toolbar"><span>etler-config.lua</span><button id="copy-config" type="button">Copy code <span>⌘ C</span></button></div>
-            <pre id="code-output" tabindex="0" aria-label="Generated Lua config"></pre>
-            <div class="code-card-bottom"><span><i></i> Updates live</span><button id="download-config" type="button">Download .lua <span>↓</span></button></div>
+            <div class="code-toolbar"><span>etler-config.lua</span><button id="copy-config" type="button"><span data-i18n="config.copyCode">Copy code</span> <span>⌘ C</span></button></div>
+            <pre id="code-output" tabindex="0" data-i18n-attr="aria-label:config.generatedAria" aria-label="Generated Lua config"></pre>
+            <div class="code-card-bottom"><span><i></i> <span data-i18n="config.updatesLive">Updates live</span></span><button id="download-config" type="button"><span data-i18n="config.download">Download .lua</span> <span>↓</span></button></div>
           </div>
 
           <div class="tip-card">
-            <span class="tip-label">BEST PRACTICE</span>
-            <h3>Save it to auto-execute</h3>
-            <p>The farm teleports between the lobby and tower. Auto-execute re-runs your config after each teleport.</p>
+            <span class="tip-label" data-i18n="config.bestPractice">BEST PRACTICE</span>
+            <h3 data-i18n="config.saveAuto">Save it to auto-execute</h3>
+            <p data-i18n="config.saveAutoCopy">The farm teleports between the lobby and tower. Auto-execute re-runs your config after each teleport.</p>
             <div class="tip-path"><span>⌁</span> executor / auto-execute /</div>
           </div>
 
           <div class="trait-card" id="guide">
-            <div class="trait-card-heading"><h3>Trait naming</h3><span>5 patterns</span></div>
+            <div class="trait-card-heading"><h3 data-i18n="config.traitNaming">Trait naming</h3><span data-i18n="config.patterns">5 patterns</span></div>
             <div class="trait-list">
-              <div><code>Godly</code><span>Exact trait</span></div>
-              <div><code>Godly Hexed</code><span>Hexed version</span></div>
-              <div><code>All Mythic</code><span>Any plain Mythic</span></div>
-              <div><code>All Mythic Hexed</code><span>Any hexed Mythic</span></div>
-              <div><code>All Hexed</code><span>Any hexed trait</span></div>
+              <div><code>Godly</code><span data-i18n="config.exactTrait">Exact trait</span></div>
+              <div><code>Godly Hexed</code><span data-i18n="config.hexedVersion">Hexed version</span></div>
+              <div><code>All Mythic</code><span data-i18n="config.anyPlainMythic">Any plain Mythic</span></div>
+              <div><code>All Mythic Hexed</code><span data-i18n="config.anyHexedMythic">Any hexed Mythic</span></div>
+              <div><code>All Hexed</code><span data-i18n="config.anyHexedTrait">Any hexed trait</span></div>
             </div>
-            <p class="trait-note">Plain and hexed pools are separate. List both if either one works for you.</p>
+            <p class="trait-note" data-i18n="config.traitNote">Plain and hexed pools are separate. List both if either one works for you.</p>
           </div>
         </aside>
       </div>
 
       <footer class="page-footer">
-        <span>ETLER HUB <i>•</i> LOADOUT BUILDER</span>
-        <a class="discord-card footer-discord-card" href="https://discord.gg/sDwYt2YUWt" target="_blank" rel="noopener noreferrer" aria-label="Join the Etler Hub Discord server">
+        <span><span data-i18n="config.footerBuilder">ETLER HUB • LOADOUT BUILDER</span></span>
+        <a class="discord-card footer-discord-card" href="https://discord.gg/sDwYt2YUWt" target="_blank" rel="noopener noreferrer" data-i18n-attr="aria-label:discord.joinAria">
           <span class="discord-mark" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none"><path d="M19.5 5.2A16.2 16.2 0 0 0 15.7 4l-.5 1a14.8 14.8 0 0 0-2.4-.2c-.8 0-1.6.1-2.4.2l-.5-1c-1.3.3-2.6.7-3.8 1.2C3.7 8.9 3 12.5 3.3 16c1.5 1.1 3 1.8 4.6 2.2l1.1-1.4c-.6-.2-1.2-.5-1.7-.8l.4-.3c1.3.6 2.8 1 4.3 1s3-.4 4.3-1l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.4c1.6-.4 3.1-1.1 4.6-2.2.4-4.1-.7-7.7-1.2-10.8ZM9.6 14.1c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.8 1.6 1.7-.7 1.7-1.6 1.7Zm4.8 0c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.8 1.6 1.7-.7 1.7-1.6 1.7Z" fill="currentColor"/></svg>
           </span>
-          <span class="discord-copy"><strong id="discord-name">Etler Hub</strong><span><i class="discord-online-dot"></i><b id="discord-online">—</b> online <em>•</em> <b id="discord-members">—</b> members</span></span>
-          <span class="discord-join">Join <span>↗</span></span>
+          <span class="discord-copy"><strong id="discord-name">Etler Hub</strong><span><i class="discord-online-dot"></i><b id="discord-online">—</b> <span data-i18n="discord.online">online</span> <em>•</em> <b id="discord-members">—</b> <span data-i18n="discord.members">members</span></span></span>
+          <span class="discord-join"><span data-i18n="discord.join">Join</span> <span>↗</span></span>
         </a>
-        <span>Everything else stays at a sensible default.</span>
+        <span data-i18n="config.footerDefault">Everything else stays at a sensible default.</span>
       </footer>
     </main>
 
@@ -212,35 +213,35 @@
       <section class="guide-dialog" role="dialog" aria-modal="true" aria-labelledby="guide-title" tabindex="-1">
         <header class="guide-modal-header">
           <div>
-            <p class="eyebrow"><span></span> ETLER HUB / QUICK GUIDE</p>
-            <h2 id="guide-title">Etler Hub — Trait Farm Setup</h2>
+            <p class="eyebrow"><span></span> <span data-i18n="guide.eyebrow">ETLER HUB / QUICK GUIDE</span></p>
+            <h2 id="guide-title" data-i18n="guide.title">Etler Hub — Trait Farm Setup</h2>
           </div>
-          <button class="guide-close" id="guide-close" type="button" data-guide-close aria-label="Close quick guide">×</button>
+          <button class="guide-close" id="guide-close" type="button" data-guide-close data-i18n-attr="aria-label:guide.close" aria-label="Close quick guide">×</button>
         </header>
         <div class="guide-content">
-          <p class="guide-lead">Farm traits while you're away. Three steps.</p>
+          <p class="guide-lead" data-i18n="guide.lead">Farm traits while you're away. Three steps.</p>
 
           <ol class="guide-steps">
-            <li>Paste your key into <code>script_key</code> and change the loader.</li>
-            <li>Change <code>"Standless"</code> to the stand you want, and <code>Wanted_Traits</code> to the traits you want.</li>
-            <li>Save it into your executor's auto-execute folder, then join the game.</li>
+            <li data-i18n="guide.step1Html" data-i18n-html="true">Paste your key into <code>script_key</code> and change the loader.</li>
+            <li data-i18n="guide.step2Html" data-i18n-html="true">Change <code>"Standless"</code> to the stand you want, and <code>Wanted_Traits</code> to the traits you want.</li>
+            <li data-i18n="guide.step3Html" data-i18n-html="true">Save it into your executor's auto-execute folder, then join the game.</li>
           </ol>
 
-          <p>Everything else already has sensible defaults — leave it alone unless you want to change something.</p>
+          <p data-i18n="guide.defaults">Everything else already has sensible defaults — leave it alone unless you want to change something.</p>
 
-          <h3>Naming your traits</h3>
-          <p>It stops on the first one that lands.</p>
+          <h3 data-i18n="guide.naming">Naming your traits</h3>
+          <p data-i18n="guide.stopsFirst">It stops on the first one that lands.</p>
           <div class="guide-definition-list">
-            <div><code>"Godly"</code><span>that exact trait</span></div>
-            <div><code>"Godly Hexed"</code><span>the hexed version of it</span></div>
-            <div><code>"All Mythic"</code><span>any Mythic trait, plain only</span></div>
-            <div><code>"All Mythic Hexed"</code><span>any hexed Mythic</span></div>
-            <div><code>"Any Hexed"</code><span>any hexed trait at all</span></div>
+            <div><code>"Godly"</code><span data-i18n="guide.exact">that exact trait</span></div>
+            <div><code>"Godly Hexed"</code><span data-i18n="guide.hexedIt">the hexed version of it</span></div>
+            <div><code>"All Mythic"</code><span data-i18n="guide.anyMythicPlain">any Mythic trait, plain only</span></div>
+            <div><code>"All Mythic Hexed"</code><span data-i18n="guide.anyHexedMythic">any hexed Mythic</span></div>
+            <div><code>"Any Hexed"</code><span data-i18n="guide.anyHexedAtAll">any hexed trait at all</span></div>
           </div>
           <pre>Wanted_Traits = { "All Mythic", "All Mythic Hexed" },</pre>
-          <p><code>"All Mythic"</code> does not include hexed Mythics. List both, as above, if you want either.</p>
+          <p data-i18n="guide.separateHtml" data-i18n-html="true"><code>"All Mythic"</code> does not include hexed Mythics. List both, as above, if you want either.</p>
 
-          <h3>Complete example</h3>
+          <h3 data-i18n="guide.completeExample">Complete example</h3>
           <pre>getgenv().Config = {
 
     Stands_Swap_Priority = {
@@ -271,57 +272,58 @@
 
 script_key = "YOUR_KEY_HERE";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/YOUR_LOADER.lua"))()</pre>
-          <p>It takes you to Boundless Tower, farms, and rolls traits until one you asked for lands.</p>
+          <p data-i18n="guide.towerCopy">It takes you to Boundless Tower, farms, and rolls traits until one you asked for lands.</p>
 
-          <h3>Three things that break it</h3>
-          <p><strong>Use the auto-execute folder.</strong> The farm teleports between the lobby and the tower, and only auto-execute re-runs the script after a teleport. Run it by hand and it stops at the first one.</p>
-          <p><strong>Keep the config above the loadstring line.</strong> Below it, and it's ignored.</p>
-          <p><strong>No window is normal.</strong> With a config, the hub runs hidden. Delete the whole Config block if you want the clickable hub back.</p>
+          <h3 data-i18n="guide.breaks">Three things that break it</h3>
+          <p data-i18n="guide.breakAutoHtml" data-i18n-html="true"><strong>Use the auto-execute folder.</strong> The farm teleports between the lobby and the tower, and only auto-execute re-runs the script after a teleport. Run it by hand and it stops at the first one.</p>
+          <p data-i18n="guide.breakConfigHtml" data-i18n-html="true"><strong>Keep the config above the loadstring line.</strong> Below it, and it's ignored.</p>
+          <p data-i18n="guide.breakWindowHtml" data-i18n-html="true"><strong>No window is normal.</strong> With a config, the hub runs hidden. Delete the whole Config block if you want the clickable hub back.</p>
 
-          <h3>Two things that look broken but aren't</h3>
-          <p><strong>It skipped my stand.</strong> Every copy already has a trait you asked for. Rolling it would destroy the good trait you already have.</p>
-          <p><strong>It stopped and named a typo.</strong> A name that matches nothing halts the script and tells you what you probably meant — better than guessing and rolling the wrong stand.</p>
+          <h3 data-i18n="guide.lookBroken">Two things that look broken but aren't</h3>
+          <p data-i18n="guide.skippedStandHtml" data-i18n-html="true"><strong>It skipped my stand.</strong> Every copy already has a trait you asked for. Rolling it would destroy the good trait you already have.</p>
+          <p data-i18n="guide.typoHtml" data-i18n-html="true"><strong>It stopped and named a typo.</strong> A name that matches nothing halts the script and tells you what you probably meant — better than guessing and rolling the wrong stand.</p>
 
-          <h3>Picking what to farm</h3>
+          <h3 data-i18n="guide.picking">Picking what to farm</h3>
           <pre>Stands_Swap_Priority = {
     { Stands = { "Standless" },                Wanted_Traits = { "Any Hexed" } },
     { Stands = { "The Vessel", "Kuro Claws" }, Wanted_Traits = { "Godly" } },
 }</pre>
-          <p>Each line is one group, farmed top to bottom. Several stands on one line share the same target traits.</p>
+          <p data-i18n="guide.lineCopy">Each line is one group, farmed top to bottom. Several stands on one line share the same target traits.</p>
 
-          <h3>Five ways to name a trait</h3>
-          <p>It stops on the first one that lands.</p>
+          <h3 data-i18n="guide.fiveWays">Five ways to name a trait</h3>
+          <p data-i18n="guide.stopsFirst">It stops on the first one that lands.</p>
           <div class="guide-definition-list">
-            <div><code>"Any Hexed"</code><span>any hexed trait</span></div>
-            <div><code>"All Mythic"</code><span>any plain Mythic; also All Legendary and All Epic</span></div>
-            <div><code>"All Mythic Hexed"</code><span>any hexed Mythic; also All Legendary Hexed</span></div>
-            <div><code>"Godly"</code><span>that exact trait</span></div>
-            <div><code>"Godly Hexed"</code><span>the hexed version of it</span></div>
+            <div><code>"Any Hexed"</code><span data-i18n="guide.anyHexed">any hexed trait</span></div>
+            <div><code>"All Mythic"</code><span data-i18n="guide.allMythic">any plain Mythic; also All Legendary and All Epic</span></div>
+            <div><code>"All Mythic Hexed"</code><span data-i18n="guide.allMythicHexed">any hexed Mythic; also All Legendary Hexed</span></div>
+            <div><code>"Godly"</code><span data-i18n="guide.exact">that exact trait</span></div>
+            <div><code>"Godly Hexed"</code><span data-i18n="guide.hexedIt">the hexed version of it</span></div>
           </div>
-          <p><code>"All Mythic"</code> and <code>"All Mythic Hexed"</code> are separate — the plain form never accepts a hexed roll. List both if you'll take either.</p>
-          <p>Capitals, spaces, and punctuation don't matter — <code>"the vessel"</code> works.</p>
-          <p>Ask for <code>"Prime"</code> and a hexed Prime is kept too — it's strictly better, so it's never rolled away.</p>
+          <p data-i18n="guide.separatePoolsHtml" data-i18n-html="true"><code>"All Mythic"</code> and <code>"All Mythic Hexed"</code> are separate — the plain form never accepts a hexed roll. List both if you'll take either.</p>
+          <p data-i18n="guide.caseHtml" data-i18n-html="true">Capitals, spaces, and punctuation don't matter — <code>"the vessel"</code> works.</p>
+          <p data-i18n="guide.primeHtml" data-i18n-html="true">Ask for <code>"Prime"</code> and a hexed Prime is kept too — it's strictly better, so it's never rolled away.</p>
 
-          <h3>Just want UCoins, not traits?</h3>
-          <p>Leave <code>Wanted_Traits</code> empty and turn ascending off:</p>
+          <h3 data-i18n="guide.ucoins">Just want UCoins, not traits?</h3>
+          <p data-i18n="guide.ucoinsLeadHtml" data-i18n-html="true">Leave <code>Wanted_Traits</code> empty and turn ascending off:</p>
           <pre>Stands_Swap_Priority = {
     { Stands = { "Standless" }, Wanted_Traits = { } },
 },
 
 Farming = { Auto_Ascend = false },</pre>
-          <p>Empty traits means it never touches the roller — so it farms on your spec, normally skipped for being too good, and can't roll over a trait you wanted to keep. <code>Auto_Ascend = false</code> keeps the coins instead of spending them.</p>
+          <p data-i18n="guide.ucoinsCopyHtml" data-i18n-html="true">Empty traits means it never touches the roller — so it farms on your spec, normally skipped for being too good, and can't roll over a trait you wanted to keep. <code>Auto_Ascend = false</code> keeps the coins instead of spending them.</p>
 
-          <h3>The other settings</h3>
-          <p><strong>Floor_Cap</strong> — clear this floor, then restart, 0 climbs forever.</p>
-          <p><strong>ItemsToKeep</strong> — auto-sell clears everything else to stop your bag filling up. Anything named here is never sold and is stored automatically the moment it drops. A floor won't skip until it's safely stored.</p>
-          <p><strong>Optimization</strong> — <code>Fps_Cap</code> caps your framerate, <code>Eco_Mode</code> drops graphics to the minimum. Both are worth it for an overnight farm.</p>
-          <p><strong>Farming.Auto_Ascend</strong> — set false to keep your UCoins. Ascending spends them and resets your level.</p>
-          <p><strong>Combat</strong> — <code>Auto_Buso_Haki</code> keeps Haki up, <code>Auto_Skills</code> casts your abilities. <code>Skill_Keys = {}</code> fires every key; name them like <code>{ "R", "T" }</code> to pick. Charged keys use +, like <code>"R+"</code>.</p>
-          <p><strong>WebHook</strong> — Discord ping each time a trait is secured. Your username is spoilered.</p>
-          <p><strong>Skins_Settings</strong> — recycles skins into points, forges points into unusuals, while you farm. <code>Keep_Rarities</code> is what you protect — everything else is melted. Valid: Rare, Epic, Legendary, Event, Mythic, Universal. Limited, Unobtainable, equipped, and locked skins are never touched.</p>
+          <h3 data-i18n="guide.otherSettings">The other settings</h3>
+          <p data-i18n="guide.floorHtml" data-i18n-html="true"><strong>Floor_Cap</strong> — clear this floor, then restart, 0 climbs forever.</p>
+          <p data-i18n="guide.itemsHtml" data-i18n-html="true"><strong>ItemsToKeep</strong> — auto-sell clears everything else to stop your bag filling up. Anything named here is never sold and is stored automatically the moment it drops. A floor won't skip until it's safely stored.</p>
+          <p data-i18n="guide.optimizationHtml" data-i18n-html="true"><strong>Optimization</strong> — <code>Fps_Cap</code> caps your framerate, <code>Eco_Mode</code> drops graphics to the minimum. Both are worth it for an overnight farm.</p>
+          <p data-i18n="guide.ascendHtml" data-i18n-html="true"><strong>Farming.Auto_Ascend</strong> — set false to keep your UCoins. Ascending spends them and resets your level.</p>
+          <p data-i18n="guide.combatHtml" data-i18n-html="true"><strong>Combat</strong> — <code>Auto_Buso_Haki</code> keeps Haki up, <code>Auto_Skills</code> casts your abilities. <code>Skill_Keys = {}</code> fires every key; name them like <code>{ "R", "T" }</code> to pick. Charged keys use +, like <code>"R+"</code>.</p>
+          <p data-i18n="guide.webhookHtml" data-i18n-html="true"><strong>WebHook</strong> — Discord ping each time a trait is secured. Your username is spoilered.</p>
+          <p data-i18n="guide.skinsHtml" data-i18n-html="true"><strong>Skins_Settings</strong> — recycles skins into points, forges points into unusuals, while you farm. <code>Keep_Rarities</code> is what you protect — everything else is melted. Valid: Rare, Epic, Legendary, Event, Mythic, Universal. Limited, Unobtainable, equipped, and locked skins are never touched.</p>
         </div>
       </section>
     </div>
-    <div id="toast" class="toast" role="status">Copied to clipboard</div>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="language.js"></script>
   </body>
 </html>

@@ -1,14 +1,15 @@
 const THEME_KEY = 'etler-hub-theme';
 const DISCORD_INVITE_URL = 'https://discord.com/api/v10/invites/sDwYt2YUWt?with_counts=true';
+const t = (key, variables) => window.i18n?.t(key, variables) ?? key;
 
 function applyTheme(theme) {
   const nextTheme = theme === 'light' ? 'light' : 'dark';
   document.documentElement.dataset.theme = nextTheme;
   const isLight = nextTheme === 'light';
-  document.getElementById('theme-label').textContent = isLight ? 'Dark' : 'Light';
+  document.getElementById('theme-label').textContent = t(isLight ? 'theme.dark' : 'theme.light');
   document.getElementById('theme-glyph').textContent = isLight ? '☀' : '☾';
-  document.getElementById('theme-toggle').setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
-  document.getElementById('theme-toggle').setAttribute('title', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+  document.getElementById('theme-toggle').setAttribute('aria-label', t(isLight ? 'theme.switchToDark' : 'theme.switchToLight'));
+  document.getElementById('theme-toggle').setAttribute('title', t(isLight ? 'theme.switchToDark' : 'theme.switchToLight'));
   document.querySelector('meta[name="theme-color"]').setAttribute('content', isLight ? '#f4f7fb' : '#080d16');
 }
 
@@ -24,15 +25,15 @@ async function copyFreeScript() {
   const value = document.getElementById('free-loadstring').textContent;
   try {
     await navigator.clipboard.writeText(value);
-    document.getElementById('copy-state').textContent = 'COPIED';
-    flash('Loadstring copied to clipboard');
+    document.getElementById('copy-state').textContent = t('free.copied');
+    flash(t('toast.loadstringCopied'));
   } catch {
     const range = document.createRange();
     range.selectNodeContents(document.getElementById('free-loadstring'));
     const selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
-    flash('Select and copy the loadstring');
+    flash(t('toast.selectLoadstring'));
   }
 }
 
@@ -67,6 +68,7 @@ async function loadDiscordStats(attempt = 0) {
 }
 
 applyTheme(document.documentElement.dataset.theme);
+window.addEventListener('languagechange', () => applyTheme(document.documentElement.dataset.theme));
 document.getElementById('theme-toggle').addEventListener('click', () => {
   const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
   applyTheme(nextTheme);
