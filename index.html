@@ -1,14 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#080d16" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem('etler-hub-theme') === 'light' ? 'light' : 'dark';
+      } catch {}
+    </script>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23080d16'/%3E%3Cpath d='M16 4 27 10v12L16 28 5 22V10L16 4Z' fill='none' stroke='%23e8b35a' stroke-width='2'/%3E%3C/svg%3E" />
     <title>Etler Hub</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body onload="import('./app.js')">
     <div class="ambient ambient-one"></div>
     <div class="ambient ambient-two"></div>
 
@@ -24,6 +29,9 @@
       </a>
       <div class="topbar-right">
         <span class="status-dot"><i></i> CONFIG BUILDER</span>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+          <span class="theme-glyph" id="theme-glyph" aria-hidden="true">☾</span><span id="theme-label">Light</span>
+        </button>
         <a class="docs-link" href="#guide">Quick guide <span>↗</span></a>
       </div>
     </header>
@@ -176,9 +184,18 @@
         </aside>
       </div>
 
-      <footer class="page-footer"><span>ETLER HUB <i>•</i> LOADOUT BUILDER</span><span>Everything else stays at a sensible default.</span></footer>
+      <footer class="page-footer">
+        <span>ETLER HUB <i>•</i> LOADOUT BUILDER</span>
+        <a class="discord-card" href="https://discord.gg/sDwYt2YUWt" target="_blank" rel="noopener noreferrer" aria-label="Join the Etler Hub Discord server">
+          <span class="discord-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M19.5 5.2A16.2 16.2 0 0 0 15.7 4l-.5 1a14.8 14.8 0 0 0-2.4-.2c-.8 0-1.6.1-2.4.2l-.5-1c-1.3.3-2.6.7-3.8 1.2C3.7 8.9 3 12.5 3.3 16c1.5 1.1 3 1.8 4.6 2.2l1.1-1.4c-.6-.2-1.2-.5-1.7-.8l.4-.3c1.3.6 2.8 1 4.3 1s3-.4 4.3-1l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.4c1.6-.4 3.1-1.1 4.6-2.2.4-4.1-.7-7.7-1.2-10.8ZM9.6 14.1c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.8 1.6 1.7-.7 1.7-1.6 1.7Zm4.8 0c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.8 1.6 1.7-.7 1.7-1.6 1.7Z" fill="currentColor"/></svg>
+          </span>
+          <span class="discord-copy"><strong id="discord-name">Etler Hub</strong><span><i class="discord-online-dot"></i><b id="discord-online">—</b> online <em>•</em> <b id="discord-members">—</b> members</span></span>
+          <span class="discord-join">Join <span>↗</span></span>
+        </a>
+        <span>Everything else stays at a sensible default.</span>
+      </footer>
     </main>
     <div id="toast" class="toast" role="status">Copied to clipboard</div>
-    <script type="module" src="app.js"></script>
   </body>
 </html>

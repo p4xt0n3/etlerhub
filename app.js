@@ -4,6 +4,7 @@ const state = {
   ],
 };
 const STORAGE_KEY = 'etler-hub-settings';
+const THEME_KEY = 'etler-hub-theme';
 const LOADER_FILE = '7fe22b5d56dfddd7a0c6f175b35f57c0.lua';
 const TRAIT_GROUPS = [
   {
@@ -21,6 +22,26 @@ const TRAIT_GROUPS = [
 ];
 
 const $ = (id) => document.getElementById(id);
+
+function applyTheme(theme) {
+  const nextTheme = theme === 'light' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = nextTheme;
+  const isLight = nextTheme === 'light';
+  $('theme-label').textContent = isLight ? 'Dark' : 'Light';
+  $('theme-glyph').textContent = isLight ? '☀' : '☾';
+  $('theme-toggle').setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+  $('theme-toggle').setAttribute('title', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', isLight ? '#f4f7fb' : '#080d16');
+}
+
+function bindTheme() {
+  applyTheme(document.documentElement.dataset.theme);
+  $('theme-toggle').addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    applyTheme(nextTheme);
+    localStorage.setItem(THEME_KEY, nextTheme);
+  });
+}
 
 function checked(id) {
   return $(id).checked;
@@ -237,6 +258,19 @@ function syncSkinOptions() {
   $('skin-options').style.pointerEvents = enabled ? 'auto' : 'none';
 }
 
+async function loadDiscordStats() {
+  try {
+    const response = await fetch('/api/discord-stats');
+    if (!response.ok) throw new Error(`Discord request failed: ${response.status}`);
+    const stats = await response.json();
+    if (stats.name) $('discord-name').textContent = stats.name;
+    if (Number.isFinite(stats.online)) $('discord-online').textContent = stats.online.toLocaleString();
+    if (Number.isFinite(stats.members)) $('discord-members').textContent = stats.members.toLocaleString();
+  } catch (error) {
+    console.warn('Discord member counts unavailable', error);
+  }
+}
+
 function bindInputs() {
   document.querySelectorAll('input').forEach((input) => {
     if (!input.closest('#priority-groups')) input.addEventListener('input', updateConfig);
@@ -272,8 +306,10 @@ function bindInputs() {
   });
 }
 
+bindTheme();
 restoreSettings();
 renderGroups();
 bindInputs();
 syncSkinOptions();
 updateConfig();
+loadDiscordStats();
