@@ -1,4 +1,5 @@
 const THEME_KEY = 'etler-hub-theme';
+const DISCORD_INVITE_URL = 'https://discord.com/api/v10/invites/sDwYt2YUWt?with_counts=true';
 
 function applyTheme(theme) {
   const nextTheme = theme === 'light' ? 'light' : 'dark';
@@ -35,11 +36,24 @@ async function copyFreeScript() {
   }
 }
 
+async function fetchDiscordStats() {
+  const backendResponse = await fetch('/api/discord-stats');
+  if (backendResponse.ok) return backendResponse.json();
+
+  const inviteResponse = await fetch(DISCORD_INVITE_URL, { headers: { accept: 'application/json' } });
+  if (!inviteResponse.ok) throw new Error(`Discord request failed: ${inviteResponse.status}`);
+  const invite = await inviteResponse.json();
+  const profile = invite.profile || {};
+  return {
+    name: profile.name || invite.guild?.name || 'Etler Hub',
+    online: invite.approximate_presence_count ?? profile.online_count ?? null,
+    members: invite.approximate_member_count ?? profile.member_count ?? null,
+  };
+}
+
 async function loadDiscordStats(attempt = 0) {
   try {
-    const response = await fetch('/api/discord-stats');
-    if (!response.ok) throw new Error(`Discord request failed: ${response.status}`);
-    const stats = await response.json();
+    const stats = await fetchDiscordStats();
     if (stats.name) document.getElementById('discord-name').textContent = stats.name;
     if (Number.isFinite(stats.online)) document.getElementById('discord-online').textContent = stats.online.toLocaleString();
     if (Number.isFinite(stats.members)) document.getElementById('discord-members').textContent = stats.members.toLocaleString();
