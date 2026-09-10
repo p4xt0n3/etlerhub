@@ -1,4 +1,5 @@
 const DISCORD_INVITE_URL = 'https://discord.com/api/v10/invites/sDwYt2YUWt?with_counts=true';
+let cachedDiscordStats = null;
 
 export default {
   async fetch(request) {
@@ -8,16 +9,26 @@ export default {
     }
 
     try {
-      const response = await fetch(DISCORD_INVITE_URL);
-      if (!response.ok) return Response.json({ error: 'Discord is unavailable' }, { status: 502 });
+      const response = await fetch(DISCORD_INVITE_URL, {
+        headers: {
+          accept: 'application/json',
+          'user-agent': 'Etler-Hub-Stats/1.0',
+        },
+      });
+      if (!response.ok) {
+        if (cachedDiscordStats) return Response.json(cachedDiscordStats, { headers: { 'cache-control': 'public, max-age=60, stale-if-error=300' } });
+        return Response.json({ error: 'Discord is unavailable' }, { status: 502 });
+      }
       const invite = await response.json();
       const profile = invite.profile || {};
-      return Response.json({
+      cachedDiscordStats = {
         name: profile.name || invite.guild?.name || 'Etler Hub',
-        online: invite.approximate_presence_count ?? null,
-        members: invite.approximate_member_count ?? null,
-      }, { headers: { 'cache-control': 'public, max-age=60' } });
+        online: invite.approximate_presence_count ?? profile.online_count ?? null,
+        members: invite.approximate_member_count ?? profile.member_count ?? null,
+      };
+      return Response.json(cachedDiscordStats, { headers: { 'cache-control': 'public, max-age=60, stale-if-error=300' } });
     } catch {
+      if (cachedDiscordStats) return Response.json(cachedDiscordStats, { headers: { 'cache-control': 'public, max-age=60, stale-if-error=300' } });
       return Response.json({ error: 'Discord is unavailable' }, { status: 502 });
     }
   },

@@ -13,12 +13,12 @@
     <title>Etler Hub</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body onload="import('./app.js')">
+  <body class="home-page">
     <div class="ambient ambient-one"></div>
     <div class="ambient ambient-two"></div>
 
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Etler Hub home">
+      <a class="brand" href="index.html" aria-label="Etler Hub home">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 32 32" fill="none">
             <path d="M16 3.5 27 9.7v12.6L16 28.5 5 22.3V9.7L16 3.5Z" stroke="currentColor" stroke-width="2"/>
@@ -27,175 +27,82 @@
         </span>
         <span>Etler <b>Hub</b></span>
       </a>
+      <nav class="home-nav" aria-label="Main navigation">
+        <a class="is-active" href="index.html">Home</a>
+        <a href="free.html">Free Script</a>
+        <a href="config.html">Config Builder</a>
+      </nav>
       <div class="topbar-right">
-        <span class="status-dot"><i></i> CONFIG BUILDER</span>
+        <span class="status-dot"><i></i> ONLINE</span>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode">
           <span class="theme-glyph" id="theme-glyph" aria-hidden="true">☾</span><span id="theme-label">Light</span>
         </button>
-        <a class="docs-link" href="#guide">Quick guide <span>↗</span></a>
       </div>
     </header>
 
-    <main id="top" class="shell">
-      <section class="hero">
-        <div>
-          <p class="eyebrow"><span></span> BOUNDLESS TOWER LOADOUT</p>
-          <h1>Build your farm.<br /><em>Leave the rest to Etler.</em></h1>
-          <p class="hero-copy">Tune your traits, paste your key, and generate a ready-to-run config in seconds.</p>
+    <main id="top" class="home-shell">
+      <section class="home-hero">
+        <div class="home-hero-copy">
+          <p class="eyebrow"><span></span> ETler hub / START HERE</p>
+          <h1>Etler Hub<br /><em>- A Universal Time Script</em></h1>
+          <p class="home-lede">A clean home for your loadouts, tools, and the next generation of Etler utilities.</p>
+          <div class="home-actions">
+            <a class="secondary-action" href="#tools">Explore the hub <span>↓</span></a>
+          </div>
         </div>
-        <div class="hero-badge">
-          <div class="badge-icon">⌁</div>
-          <div><strong>Overnight ready</strong><span>Auto-saves your choices locally</span></div>
+        <div class="home-orbit" aria-hidden="true">
+          <div class="orbit-ring orbit-ring-one"></div>
+          <div class="orbit-ring orbit-ring-two"></div>
+          <div class="orbit-core"><span>Etler Hub</span><i></i></div>
+          <span class="orbit-label orbit-label-one">LOADOUTS</span>
+          <span class="orbit-label orbit-label-two">TOOLS</span>
+          <span class="orbit-label orbit-label-three">ETLER</span>
         </div>
       </section>
 
-      <div class="workspace-grid">
-        <section class="builder-column" aria-label="Configuration builder">
-          <div class="panel step-panel">
-            <div class="panel-heading">
-              <div class="step-number">01</div>
-              <div><h2>Connect your loader</h2><p>These two values are used only in the generated script.</p></div>
-            </div>
-            <div class="field-grid">
-              <label class="field">
-                <span>Script key <small>required</small></span>
-                <div class="input-wrap">
-                  <input id="script-key" type="password" placeholder="Paste your script key" autocomplete="off" />
-                  <button class="input-action" type="button" id="toggle-key" aria-label="Show script key">Show</button>
-                </div>
-              </label>
-              <label class="field">
-                <span>Loader file <small>required</small></span>
-                <div class="input-wrap loader-input locked-loader" aria-label="Fixed loader file"><b>…/loaders/</b><span id="loader">7fe22b5d56dfddd7a0c6f175b35f57c0.lua</span><i>LOCKED</i></div>
-              </label>
-            </div>
-            <div class="note-line"><span class="note-icon">i</span> Keep your config above the loadstring line. Never share your script key.</div>
+      <section id="tools" class="hub-section" aria-labelledby="tools-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span></span> ETLER HUB</p>
+            <h2 id="tools-title">Etler Hub modules.</h2>
           </div>
-
-          <div class="panel step-panel">
-            <div class="panel-heading">
-              <div class="step-number">02</div>
-              <div><h2>Choices</h2><p>Pick the traits to farm for each stand group. Groups run from top to bottom.</p></div>
+          <span class="section-index">01 / 01</span>
+        </div>
+        <div class="module-grid">
+          <a class="module-card module-card-featured free-module-card" href="free.html">
+            <div class="module-card-top"><span class="module-number">01</span><span class="module-status">READY</span></div>
+            <div class="module-icon">⌁</div>
+            <h3>Free Script</h3>
+            <p>Copy the free loadstring and get your key from the Etler Hub Discord server.</p>
+            <span class="module-link">Open free script <b>↗</b></span>
+          </a>
+          <a class="module-card module-card-featured kaitun-module-card" href="config.html">
+            <div class="module-card-top"><span class="module-number">02</span><span class="module-status">CONFIG</span></div>
+            <div class="module-icon">⌘</div>
+            <h3>Kaitun Config</h3>
+            <p>Configure and run it in your executor. A paid script is required.</p>
+            <span class="module-link">Open Kaitun config <b>↗</b></span>
+          </a>
+          <a class="module-card module-card-featured discord-module-card" href="https://discord.gg/sDwYt2YUWt" target="_blank" rel="noopener noreferrer">
+            <div class="module-card-top"><span class="module-number">03</span><span class="module-status">COMMUNITY</span></div>
+            <div class="module-icon discord-module-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M19.5 5.2A16.2 16.2 0 0 0 15.7 4l-.5 1a14.8 14.8 0 0 0-2.4-.2c-.8 0-1.6.1-2.4.2l-.5-1c-1.3.3-2.6.7-3.8 1.2C3.7 8.9 3 12.5 3.3 16c1.5 1.1 3 1.8 4.6 2.2l1.1-1.4c-.6-.2-1.2-.5-1.7-.8l.4-.3c1.3.6 2.8 1 4.3 1s3-.4 4.3-1l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.4c1.6-.4 3.1-1.1 4.6-2.2.4-4.1-.7-7.7-1.2-10.8ZM9.6 14.1c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.7 1.6 1.7-.7 1.7-1.6 1.7Zm4.8 0c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.7 1.6 1.7-.7 1.7-1.6 1.7Z" fill="currentColor"/></svg>
             </div>
-            <div id="priority-groups" class="priority-groups"></div>
-            <button class="add-group" id="add-group" type="button"><span>＋</span> Add priority group</button>
-          </div>
+            <h3>Etler Hub Discord</h3>
+            <p>Get your key, meet the community, and keep up with Etler Hub.</p>
+            <span class="discord-module-stats"><i></i><b id="home-discord-online">—</b> online <em>•</em> <b id="home-discord-members">—</b> members</span>
+            <span class="module-link">Join server <b>↗</b></span>
+          </a>
+        </div>
+      </section>
 
-          <div class="panel step-panel">
-            <div class="panel-heading">
-              <div class="step-number">03</div>
-              <div><h2>Set farm behavior</h2><p>Everything starts with safe, overnight-friendly defaults.</p></div>
-            </div>
-
-            <div class="setting-block">
-              <div class="setting-title"><span>Farm rules</span><small>CORE</small></div>
-              <div class="compact-fields">
-                <label class="field"><span>Floor cap</span><div class="number-input"><input id="floor-cap" type="number" min="0" value="15" /><span>floors</span></div></label>
-                <label class="field"><span>Webhook <small>optional</small></span><input id="webhook" type="url" placeholder="https://discord.com/api/webhooks/…" /></label>
-              </div>
-              <label class="field items-field"><span>Items to keep <small>optional · comma separated</small></span><input id="items-to-keep" type="text" placeholder="UCoins, Saint's Corpse" /></label>
-              <div class="toggle-grid">
-                <label class="toggle-row"><span><b>Auto chest</b><small>Open chests as you farm</small></span><input id="auto-chest" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Auto ascend</b><small>Spend UCoins to reset your level</small></span><input id="auto-ascend" type="checkbox" checked /><i></i></label>
-              </div>
-            </div>
-
-            <div class="setting-block split-setting">
-              <div class="setting-title"><span>Optimization</span><small>PERFORMANCE</small></div>
-              <div class="compact-fields three">
-                <label class="field"><span>FPS cap</span><div class="number-input"><input id="fps-cap" type="number" min="1" max="240" value="60" /><span>fps</span></div></label>
-              </div>
-              <div class="toggle-grid three">
-                <label class="toggle-row"><span><b>Eco mode</b><small>Minimum graphics</small></span><input id="eco-mode" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Stop rendering</b><small>Lowest GPU usage</small></span><input id="stop-rendering" type="checkbox" /><i></i></label>
-                <label class="toggle-row"><span><b>Debug mode</b><small>Show extra logs</small></span><input id="debug-mode" type="checkbox" /><i></i></label>
-              </div>
-            </div>
-
-            <div class="setting-block split-setting">
-              <div class="setting-title"><span>Combat assist</span><small>OPTIONAL</small></div>
-              <div class="toggle-grid three">
-                <label class="toggle-row"><span><b>Summon stand</b><small>Keep your stand active</small></span><input id="auto-summon" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Buso Haki</b><small>Keep Haki active</small></span><input id="auto-buso" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Auto skills</b><small>Cast abilities automatically</small></span><input id="auto-skills" type="checkbox" checked /><i></i></label>
-              </div>
-              <label class="field skill-keys"><span>Skill keys <small>leave blank to fire all</small></span><input id="skill-keys" type="text" placeholder="R, T, R+" /></label>
-            </div>
-          </div>
-
-          <div class="panel skin-panel">
-            <div class="panel-heading compact-heading">
-              <div class="step-number">+</div>
-              <div><h2>Skin settings</h2><p>Optional recycling and forging while you farm.</p></div>
-              <label class="mini-toggle"><input id="skins-enabled" type="checkbox" checked /><i></i></label>
-            </div>
-            <div id="skin-options" class="skin-options">
-              <div class="rarity-picker">
-                <span class="picker-label">Keep rarities</span>
-                <div class="rarity-list">
-                  <label><input type="checkbox" value="Rare" />Rare</label>
-                  <label><input type="checkbox" value="Epic" />Epic</label>
-                  <label><input type="checkbox" value="Legendary" />Legendary</label>
-                  <label class="checked"><input type="checkbox" value="Event" checked />Event</label>
-                  <label><input type="checkbox" value="Mythic" />Mythic</label>
-                  <label><input type="checkbox" value="Universal" />Universal</label>
-                </div>
-              </div>
-              <div class="toggle-grid three skin-toggles">
-                <label class="toggle-row"><span><b>Recycle skins</b></span><input id="recycle" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Keep premium</b></span><input id="keep-premium" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Keep unusuals</b></span><input id="keep-unusuals" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Forge unusuals</b></span><input id="forge-unusuals" type="checkbox" checked /><i></i></label>
-                <label class="toggle-row"><span><b>Buy crates</b></span><input id="buy-crates" type="checkbox" checked /><i></i></label>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <aside class="output-column">
-          <div class="code-card">
-            <div class="code-card-top">
-              <div><span class="live-dot"></span><span>GENERATED CONFIG</span></div>
-              <span id="config-state" class="config-state">UNSAVED</span>
-            </div>
-            <div class="code-toolbar"><span>etler-config.lua</span><button id="copy-config" type="button">Copy code <span>⌘ C</span></button></div>
-            <pre id="code-output" tabindex="0" aria-label="Generated Lua config"></pre>
-            <div class="code-card-bottom"><span><i></i> Updates live</span><button id="download-config" type="button">Download .lua <span>↓</span></button></div>
-          </div>
-
-          <div class="tip-card">
-            <span class="tip-label">BEST PRACTICE</span>
-            <h3>Save it to auto-execute</h3>
-            <p>The farm teleports between the lobby and tower. Auto-execute re-runs your config after each teleport.</p>
-            <div class="tip-path"><span>⌁</span> executor / auto-execute /</div>
-          </div>
-
-          <div class="trait-card" id="guide">
-            <div class="trait-card-heading"><h3>Trait naming</h3><span>5 patterns</span></div>
-            <div class="trait-list">
-              <div><code>Godly</code><span>Exact trait</span></div>
-              <div><code>Godly Hexed</code><span>Hexed version</span></div>
-              <div><code>All Mythic</code><span>Any plain Mythic</span></div>
-              <div><code>All Mythic Hexed</code><span>Any hexed Mythic</span></div>
-              <div><code>All Hexed</code><span>Any hexed trait</span></div>
-            </div>
-            <p class="trait-note">Plain and hexed pools are separate. List both if either one works for you.</p>
-          </div>
-        </aside>
-      </div>
-
-      <footer class="page-footer">
-        <span>ETLER HUB <i>•</i> LOADOUT BUILDER</span>
-        <a class="discord-card" href="https://discord.gg/sDwYt2YUWt" target="_blank" rel="noopener noreferrer" aria-label="Join the Etler Hub Discord server">
-          <span class="discord-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M19.5 5.2A16.2 16.2 0 0 0 15.7 4l-.5 1a14.8 14.8 0 0 0-2.4-.2c-.8 0-1.6.1-2.4.2l-.5-1c-1.3.3-2.6.7-3.8 1.2C3.7 8.9 3 12.5 3.3 16c1.5 1.1 3 1.8 4.6 2.2l1.1-1.4c-.6-.2-1.2-.5-1.7-.8l.4-.3c1.3.6 2.8 1 4.3 1s3-.4 4.3-1l.4.3c-.5.3-1.1.6-1.7.8l1.1 1.4c1.6-.4 3.1-1.1 4.6-2.2.4-4.1-.7-7.7-1.2-10.8ZM9.6 14.1c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.8 1.6 1.7-.7 1.7-1.6 1.7Zm4.8 0c-.9 0-1.6-.8-1.6-1.7s.7-1.7 1.6-1.7 1.6.8 1.6 1.7-.7 1.7-1.6 1.7Z" fill="currentColor"/></svg>
-          </span>
-          <span class="discord-copy"><strong id="discord-name">Etler Hub</strong><span><i class="discord-online-dot"></i><b id="discord-online">—</b> online <em>•</em> <b id="discord-members">—</b> members</span></span>
-          <span class="discord-join">Join <span>↗</span></span>
-        </a>
-        <span>Everything else stays at a sensible default.</span>
-      </footer>
+      <section class="home-rail" aria-label="Etler Hub status">
+        <span><i></i> SYSTEM ONLINE</span>
+        <span>ETLER HUB <b>•</b> FOUNDATION BUILD</span>
+        <a href="free.html">Open free script <b>→</b></a>
+      </section>
     </main>
-    <div id="toast" class="toast" role="status">Copied to clipboard</div>
+
+    <script type="module" src="home.js"></script>
   </body>
 </html>

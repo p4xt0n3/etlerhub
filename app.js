@@ -258,7 +258,7 @@ function syncSkinOptions() {
   $('skin-options').style.pointerEvents = enabled ? 'auto' : 'none';
 }
 
-async function loadDiscordStats() {
+async function loadDiscordStats(attempt = 0) {
   try {
     const response = await fetch('/api/discord-stats');
     if (!response.ok) throw new Error(`Discord request failed: ${response.status}`);
@@ -267,8 +267,36 @@ async function loadDiscordStats() {
     if (Number.isFinite(stats.online)) $('discord-online').textContent = stats.online.toLocaleString();
     if (Number.isFinite(stats.members)) $('discord-members').textContent = stats.members.toLocaleString();
   } catch (error) {
+    if (attempt < 2) {
+      window.setTimeout(() => loadDiscordStats(attempt + 1), 600);
+      return;
+    }
     console.warn('Discord member counts unavailable', error);
   }
+}
+
+function bindGuide() {
+  const trigger = $('quick-guide-trigger');
+  const modal = $('guide-modal');
+  if (!trigger || !modal) return;
+  const dialog = modal.querySelector('.guide-dialog');
+  const close = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    trigger.focus();
+  };
+  const open = () => {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    dialog.focus();
+  };
+  trigger.addEventListener('click', open);
+  modal.querySelectorAll('[data-guide-close]').forEach((element) => element.addEventListener('click', close));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) close();
+  });
 }
 
 function bindInputs() {
@@ -310,6 +338,7 @@ bindTheme();
 restoreSettings();
 renderGroups();
 bindInputs();
+bindGuide();
 syncSkinOptions();
 updateConfig();
 loadDiscordStats();
